@@ -75,19 +75,15 @@ export default function Proposal() {
   }, [user, fullName]);
 
   // Fetch contract PDF
-  const fetchContract = async (contractName) => {
+  const fetchContract = async (contractId) => {
     setLoadingContract(true);
     setContractError(null);
     try {
-      // Try local public folder first
-      let response = await fetch(`/${contractName}`);
-      if (!response.ok) {
-        // Fallback to worker endpoint
-        response = await fetch(
-          `https://ad-astra-propuestas-worker.faiafacundo.workers.dev/contract/${contractName}`,
-          { method: "GET", headers: { Accept: "application/pdf" } }
-        );
-      }
+      // Usar el endpoint RESTful correcto para el PDF
+      const response = await fetch(
+        `https://ad-astra-propuestas-worker.faiafacundo.workers.dev/contrato/${contractId}/pdf`,
+        { method: "GET", headers: { Accept: "application/pdf" } }
+      );
       if (!response.ok)
         throw new Error(`No se pudo cargar el PDF: ${response.status}`);
       const blob = await response.blob();
