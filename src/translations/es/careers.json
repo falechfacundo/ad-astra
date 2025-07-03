@@ -1,0 +1,27 @@
+{
+  "title": "Alcanza las Estrellas",
+  "mission": "Estamos en una misión para elevar los negocios a las estrellas. Únete a nuestro equipo global de innovadores y trae tus talentos a una empresa que valora la creatividad, la colaboración y las soluciones de vanguardia.",
+  "whyJoinUs": "¿Por qué unirse a nosotros?",
+  "whyJoinUsDetails": "Como una empresa completamente remota, ofrecemos la flexibilidad de trabajar desde cualquier lugar del mundo. Creemos en fomentar un entorno colaborativo e inclusivo donde tus ideas puedan brillar. Disfruta de salarios competitivos, beneficios integrales y oportunidades inigualables para el crecimiento profesional.",
+  "workFromAnywhere": "🌍 Trabaja desde cualquier lugar",
+  "innovateWithTheBest": "💡 Innova con los mejores",
+  "growYourCareer": "📈 Crece tu carrera",
+  "competitiveSalaries": "💰 Salarios y beneficios competitivos",
+  "currentOpenings": "Oportunidades actuales",
+  "backEndDeveloper": {
+    "title": "Desarrollador Back End - Junior",
+    "description": "Ayúdanos a construir aplicaciones del lado del servidor robustas y escalables. Si tienes experiencia en programación del lado del servidor y gestión de bases de datos, te queremos en nuestro equipo."
+  },
+  "uxUiDesigner": {
+    "title": "Diseñador UX/UI",
+    "description": "Necesitamos mentes creativas para diseñar experiencias de usuario intuitivas y atractivas. Si tienes un portafolio sólido y experiencia con herramientas de diseño como Sketch o Figma, aplica hoy."
+  },
+  "brandingSpecialist": {
+    "title": "Especialista en Branding y Narración",
+    "description": "Crea narrativas de marca convincentes y atrae a nuestra audiencia. Si eres un narrador creativo con talento para el branding, nos encantaría saber de ti."
+  },
+  "devOpsEngineer": {
+    "title": "Ingeniero DevOps",
+    "description": "Optimiza nuestros procesos de desarrollo y mejora nuestra canalización de despliegue. Si tienes experiencia con CI/CD, servicios en la nube y herramientas de automatización, únete a nuestro equipo."
+  }
+}

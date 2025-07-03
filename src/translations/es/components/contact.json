@@ -1,0 +1,18 @@
+{
+  "contact": {
+    "title": "Contáctenos",
+    "description": "¿Listo para llevar su presencia en línea al siguiente nivel? Complete el formulario a continuación para comenzar. ¡Esperamos trabajar con usted!",
+    "form": {
+      "emailLabel": "Correo Electrónico",
+      "nameLabel": "Nombre",
+      "messageLabel": "Mensaje",
+      "messagePlaceholder": "Estoy interesado en resolver ese problema y creo que este proyecto se ve bastante bien...",
+      "submitButton": "Enviar"
+    },
+    "toast": {
+      "error": "Por favor complete todos los campos antes de enviar el mensaje.",
+      "success": "¡Mensaje enviado con éxito!",
+      "failure": "No se pudo enviar el mensaje. Por favor, inténtelo de nuevo."
+    }
+  }
+}

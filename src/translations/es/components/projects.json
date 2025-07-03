@@ -1,0 +1,26 @@
+{
+  "projects": {
+    "title": "Trabajos",
+    "negroOscuro": {
+      "name": "Negro Oscuro",
+      "location": "Argentina",
+      "description": "Diseño de UI e implementación de funcionalidad de comercio electrónico",
+      "details": "El proyecto se ejecutó utilizando la plataforma Tiendanube, específicamente elegida a petición del cliente. Tiendanube nos permitió desarrollar una tienda en línea robusta y escalable."
+    },
+    "hamburguesaNostra": {
+      "name": "Hamburguesa Nostra",
+      "location": "España",
+      "description": "Interfaz atractiva y fácil de usar, que refleja la identidad y el estilo de la marca. Priorizamos una experiencia de usuario intuitiva para asegurar una navegación fluida y una alta tasa de conversión."
+    },
+    "eSanad": {
+      "name": "eSanad",
+      "location": "EAU",
+      "description": "Interfaz atractiva y fácil de usar, que refleja la identidad y el estilo de la marca."
+    },
+    "suitsYou": {
+      "name": "Suits You",
+      "location": "Irlanda",
+      "description": "Sistema de diseño, UX/UI y funcionalidad de comercio electrónico"
+    }
+  }
+}

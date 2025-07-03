@@ -1,0 +1,58 @@
+{
+  "references": {
+    "title": "References",
+    "description": "With years of experience in the web design and development industry, we have the knowledge and skills to deliver high-quality solutions that meet your business needs. Our team is passionate about creating websites that are not only visually appealing but also user-friendly and optimized for search engines.",
+    "reviews": [
+      {
+        "name": "Pilar González",
+        "username": "@pilly_gonza42",
+        "body": "This service has completely blown my mind. It's truly exceptional and I can't get enough of it."
+      },
+      {
+        "name": "Ana García",
+        "username": "@anita_star567",
+        "body": "Absolutely phenomenal! I'm utterly impressed and can't express how much I appreciate it."
+      },
+      {
+        "name": "Julia Torres",
+        "username": "@jules_torres18",
+        "body": "This is by far the best experience I've ever had. Truly outstanding. I'm in awe."
+      },
+      {
+        "name": "Antonio Ruiz",
+        "username": "@antonruiz42",
+        "body": "Exceptional service! I can't find the words to describe how amazing this is. Highly recommend it."
+      },
+      {
+        "name": "Manuel Vargas",
+        "username": "@manu_var_555",
+        "body": "A game-changer in every sense. This service has left me speechless. I absolutely love it."
+      },
+      {
+        "name": "Isabel Hernández",
+        "username": "@isa_hdz",
+        "body": "Incredible! I never knew something like this existed. It's amazing and I adore it."
+      },
+      {
+        "name": "Ignacio Laus",
+        "username": "@lauigna",
+        "body": "Absolutely stunning! This service has exceeded all my expectations. Highly recommend it to everyone."
+      },
+      {
+        "name": "Juan Jesús",
+        "username": "@jjesus",
+        "body": "This has completely transformed the way I see things. Truly remarkable and beyond what I imagined."
+      }
+    ],
+    "stats": {
+      "recommendation": {
+        "value": 99,
+        "text": "Of Our Customer Will recommend us to their friends"
+      },
+      "sales": {
+        "value": 95,
+        "text": "Increments his sales"
+      }
+    }
+  }
+}

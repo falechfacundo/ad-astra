@@ -1,0 +1,58 @@
+{
+  "references": {
+    "title": "Referencias",
+    "description": "Con años de experiencia en la industria del diseño y desarrollo web, tenemos el conocimiento y las habilidades para ofrecer soluciones de alta calidad que satisfagan las necesidades de su negocio. Nuestro equipo está apasionado por crear sitios web que no solo sean visualmente atractivos, sino también fáciles de usar y optimizados para los motores de búsqueda.",
+    "reviews": [
+      {
+        "name": "Pilar González",
+        "username": "@pilly_gonza42",
+        "body": "Este servicio me ha dejado completamente impresionada. Es realmente excepcional y no puedo tener suficiente de él."
+      },
+      {
+        "name": "Ana García",
+        "username": "@anita_star567",
+        "body": "¡Absolutamente fenomenal! Estoy completamente impresionada y no puedo expresar cuánto lo aprecio."
+      },
+      {
+        "name": "Julia Torres",
+        "username": "@jules_torres18",
+        "body": "Esta es, con mucho, la mejor experiencia que he tenido. Realmente sobresaliente. Estoy asombrada."
+      },
+      {
+        "name": "Antonio Ruiz",
+        "username": "@antonruiz42",
+        "body": "¡Servicio excepcional! No encuentro las palabras para describir lo increíble que es. Lo recomiendo altamente."
+      },
+      {
+        "name": "Manuel Vargas",
+        "username": "@manu_var_555",
+        "body": "Un cambio de juego en todos los sentidos. Este servicio me ha dejado sin palabras. Me encanta absolutamente."
+      },
+      {
+        "name": "Isabel Hernández",
+        "username": "@isa_hdz",
+        "body": "¡Increíble! Nunca supe que algo así existía. Es asombroso y lo adoro."
+      },
+      {
+        "name": "Ignacio Laus",
+        "username": "@lauigna",
+        "body": "¡Absolutamente impresionante! Este servicio ha superado todas mis expectativas. Lo recomiendo altamente a todos."
+      },
+      {
+        "name": "Juan Jesús",
+        "username": "@jjesus",
+        "body": "Esto ha transformado completamente la forma en que veo las cosas. Realmente notable y más allá de lo que imaginé."
+      }
+    ],
+    "stats": {
+      "recommendation": {
+        "value": 99,
+        "text": "De nuestros clientes nos recomendarán a sus amigos"
+      },
+      "sales": {
+        "value": 95,
+        "text": "Incrementa sus ventas"
+      }
+    }
+  }
+}

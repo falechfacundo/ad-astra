@@ -1,0 +1,26 @@
+{
+  "hosting": {
+    "name": "WEB Hosting and Customer Support",
+    "description": "Discover our comprehensive web hosting services tailored to your requirements. Whether it's shared hosting or dedicated servers, our team of experts will collaborate with you to create a hosting solution that fits your needs. Plus, our 24/7 customer support ensures your website is always up and running. We can also integrate with any build tools you prefer"
+  },
+  "analytics": {
+    "name": "Data Analytics, AI and Business Automations",
+    "description": "We understand the critical importance our customers place on data analytics. In today's world, leveraging AI for business automation is essential. Our solutions not only automate your business processes but also provide comprehensive data insights to drive your success"
+  },
+  "development": {
+    "name": "Software Development",
+    "description": {
+      "part1": "Our team will create a solution that not only looks great but also performs well. We use the latest technologies in order to achieve a",
+      "highlight": "high value",
+      "part2": "solution for your business"
+    }
+  },
+  "design": {
+    "name": "Design",
+    "description": "Explore our diverse design services crafted to meet your needs. From brand and logo design to e-commerce solutions, we have you covered"
+  },
+  "cloud": {
+    "name": "Cloud",
+    "description": "Our extensive range of cloud services is designed to meet your needs. From cloud storage to cloud computing boxshadow"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "faq": {
+    "title": "Frequently Asked Questions (FAQ)",
+    "questions": [
+      {
+        "question": "What services does your company provide?",
+        "answer": "We offer a wide range of services including software development, UX/UI design, marketing solutions, database management, server hosting, and automation systems."
+      },
+      {
+        "question": "How do you approach a new project?",
+        "answer": "We start with a thorough consultation to understand your needs and goals. Then, we develop a tailored strategy and work closely with you throughout the entire process to ensure the best results."
+      },
+      {
+        "question": "What industries do you specialize in?",
+        "answer": "We have experience working across various industries including e-commerce, healthcare, finance, education, and more. Our solutions are adaptable to meet the unique needs of any industry."
+      },
+      {
+        "question": "Can you help redesign our existing website or software?",
+        "answer": "Absolutely. We specialize in UX/UI design and can help revamp your existing website or software to improve usability, functionality, and overall user experience."
+      },
+      {
+        "question": "Do you offer ongoing support and maintenance?",
+        "answer": "Yes, we provide ongoing support and maintenance services to ensure your systems and applications run smoothly and remain up-to-date."
+      },
+      {
+        "question": "How do you ensure the security of your software and systems?",
+        "answer": "We implement industry-standard security practices, including regular updates, data encryption, and comprehensive security audits, to protect your software and systems from potential threats."
+      },
+      {
+        "question": "What kind of marketing services do you offer?",
+        "answer": "Our marketing services include digital marketing strategies, SEO, social media management, content creation, and more. We tailor our marketing solutions to meet your specific business objectives."
+      },
+      {
+        "question": "How do you handle data management and databases?",
+        "answer": "We offer comprehensive database management services, including design, implementation, optimization, and maintenance. Our team ensures your data is secure, organized, and easily accessible."
+      },
+      {
+        "question": "What are your server hosting options?",
+        "answer": "We provide a variety of hosting solutions, including shared hosting, dedicated servers, and cloud hosting. Our team will work with you to determine the best option for your needs."
+      },
+      {
+        "question": "Can you automate our business processes?",
+        "answer": "Yes, we specialize in creating custom automation systems to streamline your business operations, increase efficiency, and reduce manual tasks. We leverage the latest technologies to develop solutions that fit your specific requirements."
+      }
+    ]
+  }
+}

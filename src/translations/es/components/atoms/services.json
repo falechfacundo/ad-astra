@@ -1,0 +1,26 @@
+{
+  "hosting": {
+    "name": "Alojamiento WEB y Soporte al Cliente",
+    "description": "Descubra nuestros servicios integrales de alojamiento web adaptados a sus necesidades. Ya sea alojamiento compartido o servidores dedicados, nuestro equipo de expertos colaborará con usted para crear una solución de alojamiento que se ajuste a sus necesidades. Además, nuestro soporte al cliente 24/7 garantiza que su sitio web esté siempre en funcionamiento. También podemos integrarnos con cualquier herramienta de construcción que prefiera"
+  },
+  "analytics": {
+    "name": "Análisis de Datos, IA y Automatizaciones Empresariales",
+    "description": "Entendemos la importancia crítica que nuestros clientes otorgan al análisis de datos. En el mundo actual, aprovechar la IA para la automatización empresarial es esencial. Nuestras soluciones no solo automatizan sus procesos empresariales, sino que también proporcionan información completa sobre los datos para impulsar su éxito"
+  },
+  "development": {
+    "name": "Desarrollo de Software",
+    "description": {
+      "part1": "Nuestro equipo creará una solución que no solo se vea bien, sino que también funcione bien. Usamos las últimas tecnologías para lograr una",
+      "highlight": "alta calidad",
+      "part2": "solución para su negocio"
+    }
+  },
+  "design": {
+    "name": "Diseño",
+    "description": "Explore nuestros diversos servicios de diseño creados para satisfacer sus necesidades. Desde el diseño de marca y logotipo hasta soluciones de comercio electrónico, lo tenemos cubierto"
+  },
+  "cloud": {
+    "name": "Nube",
+    "description": "Nuestra amplia gama de servicios en la nube está diseñada para satisfacer sus necesidades. Desde almacenamiento en la nube hasta computación en la nube"
+  }
+}

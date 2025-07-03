@@ -1,0 +1,16 @@
+{
+  "title": "Front End Developer - Junior",
+  "description": "Passionate about design and development? Join us as a Front End Developer to create stunning, user-friendly interfaces using",
+  "applyNow": "Apply Now",
+  "modal": {
+    "namePlaceholder": "Name",
+    "lastnamePlaceholder": "Lastname",
+    "emailPlaceholder": "Email",
+    "portfolioUrlPlaceholder": "Portfolio URL",
+    "linkedinUrlPlaceholder": "Linkedin profile URL",
+    "portfolioPdfPlaceholder": "Portfolio PDF",
+    "valuePlaceholder": "How you will bring value for the company?",
+    "closeButton": "Close",
+    "signInButton": "Sign in"
+  }
+}

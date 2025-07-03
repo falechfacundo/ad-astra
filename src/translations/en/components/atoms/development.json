@@ -1,0 +1,19 @@
+{
+  "textDevelopment": {
+    "part1": "Our team will create a solution that not only looks great but also performs well. We use the latest technologies in order to achieve a",
+    "highlight": "high value",
+    "part2": "solution for your business"
+  },
+  "titleDevelopment": "Software Development",
+  "buttons": {
+    "web": "web",
+    "software": "software",
+    "application": "application",
+    "cms": "cms",
+    "payment": "payment",
+    "testing": "testing",
+    "server": "server",
+    "database": "database",
+    "vps": "vps"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "title": "Reach for the Stars",
+  "mission": "We're on a mission to elevate businesses to the stars. Join our global team of innovators and bring your talents to a company that values creativity, collaboration, and cutting-edge solutions.",
+  "whyJoinUs": "Why Join Us?",
+  "whyJoinUsDetails": "As a fully remote company, we offer the flexibility to work from anywhere in the world. We believe in fostering a collaborative and inclusive environment where your ideas can shine. Enjoy competitive salaries, comprehensive benefits, and unparalleled opportunities for professional growth.",
+  "workFromAnywhere": "🌍 Work from Anywhere",
+  "innovateWithTheBest": "💡 Innovate with the Best",
+  "growYourCareer": "📈 Grow Your Career",
+  "competitiveSalaries": "💰 Competitive Salaries & Benefits",
+  "currentOpenings": "Current Openings",
+  "backEndDeveloper": {
+    "title": "Back End Developer - Junior",
+    "description": "Help us build robust, scalable server-side applications. If you have experience in server-side programming and database management, we want you."
+  },
+  "uxUiDesigner": {
+    "title": "UX/UI Designer",
+    "description": "We need creative minds to design intuitive, engaging user experiences. If you have a strong portfolio and experience with design tools like Sketch or Figma, apply today."
+  },
+  "brandingSpecialist": {
+    "title": "Branding & Storytelling Specialist",
+    "description": "Craft compelling brand narratives and engage our audience. If you're a creative storyteller with a knack for branding, we'd love to hear from you."
+  },
+  "devOpsEngineer": {
+    "title": "DevOps Engineer",
+    "description": "Streamline our development processes and improve our deployment pipeline. If you have experience with CI/CD, cloud services, and automation tools, join our team."
+  }
+}

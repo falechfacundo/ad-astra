@@ -1,0 +1,13 @@
+{
+  "newsletter": {
+    "title": "¡No te pierdas las últimas novedades de la industria!",
+    "description": "Suscríbete a nuestro newsletter y recibe lo último en innovación digital y consejos para potenciar tu negocio.",
+    "emailLabel": "Correo electrónico",
+    "emailError": "Por favor, introduce un correo electrónico válido",
+    "subscribeButton": "Suscribirse",
+    "toast": {
+      "success": "Correo enviado correctamente",
+      "error": "Error al enviar el correo"
+    }
+  }
+}

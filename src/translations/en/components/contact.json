@@ -1,0 +1,18 @@
+{
+  "contact": {
+    "title": "Contact Us",
+    "description": "Ready to take your online presence to the next level? Fill out the form below to get started. We look forward to working with you!",
+    "form": {
+      "emailLabel": "Email",
+      "nameLabel": "Name",
+      "messageLabel": "Message",
+      "messagePlaceholder": "I'm interested in solving that problem and I think this project looks pretty well...",
+      "submitButton": "Send"
+    },
+    "toast": {
+      "error": "Please fill out all fields before sending the message.",
+      "success": "Message sent successfully!",
+      "failure": "Failed to send message. Please try again."
+    }
+  }
+}

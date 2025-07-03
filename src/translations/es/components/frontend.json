@@ -1,0 +1,16 @@
+{
+  "title": "Desarrollador Front End - Junior",
+  "description": "¿Apasionado por el diseño y el desarrollo? Únete a nosotros como Desarrollador Front End para crear interfaces impresionantes y fáciles de usar utilizando",
+  "applyNow": "Aplica Ahora",
+  "modal": {
+    "namePlaceholder": "Nombre",
+    "lastnamePlaceholder": "Apellido",
+    "emailPlaceholder": "Correo Electrónico",
+    "portfolioUrlPlaceholder": "URL del Portafolio",
+    "linkedinUrlPlaceholder": "URL del perfil de Linkedin",
+    "portfolioPdfPlaceholder": "PDF del Portafolio",
+    "valuePlaceholder": "¿Cómo aportarás valor a la empresa?",
+    "closeButton": "Cerrar",
+    "signInButton": "Enviar"
+  }
+}

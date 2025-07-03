@@ -1,0 +1,11 @@
+{
+  "title": "Don't miss the latest industry news!",
+  "description": "Subscribe to our newsletter and receive the latest in digital innovation and tips to boost your business.",
+  "emailLabel": "Email",
+  "emailError": "Please enter a valid email",
+  "subscribeButton": "Subscribe",
+  "toast": {
+    "success": "Email sent successfully",
+    "error": "Error sending email"
+  }
+}

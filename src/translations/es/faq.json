@@ -1,0 +1,47 @@
+{
+  "faq": {
+    "title": "Preguntas Frecuentes (FAQ)",
+    "questions": [
+      {
+        "question": "¿Qué servicios ofrece su empresa?",
+        "answer": "Ofrecemos una amplia gama de servicios que incluyen desarrollo de software, diseño UX/UI, soluciones de marketing, gestión de bases de datos, alojamiento de servidores y sistemas de automatización."
+      },
+      {
+        "question": "¿Cómo abordan un nuevo proyecto?",
+        "answer": "Comenzamos con una consulta exhaustiva para comprender sus necesidades y objetivos. Luego, desarrollamos una estrategia personalizada y trabajamos estrechamente con usted durante todo el proceso para garantizar los mejores resultados."
+      },
+      {
+        "question": "¿En qué industrias se especializan?",
+        "answer": "Tenemos experiencia trabajando en diversas industrias, incluyendo comercio electrónico, salud, finanzas, educación y más. Nuestras soluciones son adaptables para satisfacer las necesidades únicas de cualquier industria."
+      },
+      {
+        "question": "¿Pueden ayudar a rediseñar nuestro sitio web o software existente?",
+        "answer": "Absolutamente. Nos especializamos en diseño UX/UI y podemos ayudar a renovar su sitio web o software existente para mejorar la usabilidad, funcionalidad y la experiencia general del usuario."
+      },
+      {
+        "question": "¿Ofrecen soporte y mantenimiento continuo?",
+        "answer": "Sí, ofrecemos servicios de soporte y mantenimiento continuo para garantizar que sus sistemas y aplicaciones funcionen sin problemas y se mantengan actualizados."
+      },
+      {
+        "question": "¿Cómo aseguran la seguridad de su software y sistemas?",
+        "answer": "Implementamos prácticas de seguridad estándar de la industria, incluyendo actualizaciones regulares, encriptación de datos y auditorías de seguridad exhaustivas, para proteger su software y sistemas de posibles amenazas."
+      },
+      {
+        "question": "¿Qué tipo de servicios de marketing ofrecen?",
+        "answer": "Nuestros servicios de marketing incluyen estrategias de marketing digital, SEO, gestión de redes sociales, creación de contenido y más. Adaptamos nuestras soluciones de marketing para cumplir con los objetivos específicos de su negocio."
+      },
+      {
+        "question": "¿Cómo manejan la gestión de datos y bases de datos?",
+        "answer": "Ofrecemos servicios integrales de gestión de bases de datos, incluyendo diseño, implementación, optimización y mantenimiento. Nuestro equipo asegura que sus datos estén seguros, organizados y sean fácilmente accesibles."
+      },
+      {
+        "question": "¿Cuáles son sus opciones de alojamiento de servidores?",
+        "answer": "Proporcionamos una variedad de soluciones de alojamiento, incluyendo alojamiento compartido, servidores dedicados y alojamiento en la nube. Nuestro equipo trabajará con usted para determinar la mejor opción para sus necesidades."
+      },
+      {
+        "question": "¿Pueden automatizar nuestros procesos empresariales?",
+        "answer": "Sí, nos especializamos en crear sistemas de automatización personalizados para optimizar las operaciones de su negocio, aumentar la eficiencia y reducir las tareas manuales. Aprovechamos las últimas tecnologías para desarrollar soluciones que se ajusten a sus requisitos específicos."
+      }
+    ]
+  }
+}
