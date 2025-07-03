@@ -25,6 +25,7 @@ import {
   SignedOut,
 } from "@clerk/clerk-react";
 import { useProjectsStore } from "../../store/projects.js";
+import { useSyncClerkUser } from "../../lib/useSyncClerkUser.js";
 
 const menuItems = [
   { label: "home", url: "" },
@@ -68,6 +69,8 @@ export default function Header() {
       clearProjects(); // Optional: clear on close
     }
   }, [user, dropdownOpen, fetchProjects, clearProjects]);
+
+  useSyncClerkUser();
 
   return (
     <Navbar className="fixed px-2 md:px-0" maxWidth="xl">
