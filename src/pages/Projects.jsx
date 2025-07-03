@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 import { Card, CardBody, Button, Chip } from "@nextui-org/react";
 import { useUser, SignedIn, SignedOut, SignInButton } from "@clerk/clerk-react";
 import { AnimatedGridPattern } from "../components/magic_ui/AnimatedGridPattern.jsx";
-import { useEffect, useState } from "react";
-import { worker_url } from "../lib/constant.js";
+import { useEffect } from "react";
 import Layout from "../components/layout/Layout.jsx";
+import { useProjectsStore } from "../store/projects.js";
 
 const getStatusColor = (status) => {
   switch (status) {
@@ -42,36 +42,13 @@ const getStatusText = (status) => {
 
 export default function Projects() {
   const { user } = useUser();
-  const [projects, setProjects] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const { projects, loading, error, fetchProjects } = useProjectsStore();
 
   useEffect(() => {
-    const fetchProjects = async () => {
-      if (!user) {
-        setProjects([]);
-        setLoading(false);
-        return;
-      }
-      setLoading(true);
-      setError(null);
-      try {
-        // Nuevo endpoint: GET /projects?cliente=<id_cliente>
-        const response = await fetch(
-          `${worker_url}/projects?cliente=${user.id}`
-        );
-        if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
-        const data = await response.json();
-        // El backend ahora retorna un array de proyectos
-        setProjects(Array.isArray(data) ? data : []);
-      } catch (err) {
-        setError("No se pudieron cargar los proyectos. Intenta nuevamente.");
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchProjects();
-  }, [user]);
+    if (user) {
+      fetchProjects(user.id);
+    }
+  }, [user, fetchProjects]);
 
   return (
     <Layout>
