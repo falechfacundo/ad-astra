@@ -12,7 +12,7 @@ import Emails from "./pages/email-list.jsx";
 import ContactPage from "./pages/Contact.jsx";
 import Navigation from "./pages/Navigation.jsx";
 import Copied from "./pages/Copied.jsx";
-import ProposalPage from "./pages/proposal";
+import Proposal from "./pages/Proposal.jsx";
 import Projects from "./pages/Projects.jsx";
 import SignInPage from "./pages/SignIn.jsx";
 import SignUpPage from "./pages/SignUp.jsx";
@@ -38,7 +38,7 @@ function App() {
               <Route path="/copied" element={<Copied />} />
               <Route path="/sign-in/*" element={<SignInPage />} />
               <Route path="/sign-up/*" element={<SignUpPage />} />
-              <Route path="/proposal" element={<ProposalPage />} />
+              <Route path="/proposal" element={<Proposal />} />
               <Route path="/projects" element={<Projects />} />
             </Routes>
           </ModalProvider>
