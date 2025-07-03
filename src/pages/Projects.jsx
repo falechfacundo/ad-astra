@@ -3,55 +3,7 @@ import { Card, CardBody, Button, Chip } from "@nextui-org/react";
 import { useUser, SignedIn, SignedOut, SignInButton } from "@clerk/clerk-react";
 import { AnimatedGridPattern } from "../components/magic_ui/AnimatedGridPattern.jsx";
 import { useEffect, useState } from "react";
-
-// Datos mock de proyectos expandidos
-const allUserProjects = [
-  {
-    id: "123",
-    name: "Proyecto Web E-commerce",
-    description: "Desarrollo de tienda online con sistema de pagos integrado",
-    status: "pending",
-    deposito_inicial: 25000,
-    fecha_creacion: "2024-11-15",
-    cliente: "TechCorp Solutions",
-  },
-  {
-    id: "456",
-    name: "App Móvil Restaurante",
-    description: "Aplicación móvil para pedidos y delivery de restaurante",
-    status: "firmado",
-    deposito_inicial: 35000,
-    fecha_creacion: "2024-10-20",
-    cliente: "Restaurante El Buen Sabor",
-  },
-  {
-    id: "6852caa0a8067a9cd29818cf",
-    name: "Sistema de Gestión Empresarial",
-    description: "ERP completo para gestión de inventarios y ventas",
-    status: "in_progress",
-    deposito_inicial: 45000,
-    fecha_creacion: "2024-09-10",
-    cliente: "Industrias Gamma",
-  },
-  {
-    id: "789",
-    name: "Portal Web Corporativo",
-    description: "Sitio web institucional con panel de administración",
-    status: "completed",
-    deposito_inicial: 20000,
-    fecha_creacion: "2024-08-05",
-    cliente: "Corporación Delta",
-  },
-  {
-    id: "101",
-    name: "App de Fitness",
-    description: "Aplicación móvil para seguimiento de rutinas y dietas",
-    status: "pending",
-    deposito_inicial: 30000,
-    fecha_creacion: "2024-12-01",
-    cliente: "FitLife Studios",
-  },
-];
+import { worker_url } from "../lib/constant.js";
 
 const getStatusColor = (status) => {
   switch (status) {
@@ -102,27 +54,15 @@ export default function Projects() {
       }
       setLoading(true);
       setError(null);
-      // Detectar modo desarrollo
-      const isDevelopment =
-        import.meta.env.DEV || window.location.hostname === "localhost";
-      if (isDevelopment) {
-        // Fallback a mock en desarrollo
-        setProjects(
-          allUserProjects.filter(
-            (p) => p.id_cliente === user.id || !p.id_cliente
-          )
-        );
-        setLoading(false);
-        return;
-      }
       try {
-        // Petición real al worker usando el id_cliente
+        // Nuevo endpoint: GET /projects?cliente=<id_cliente>
         const response = await fetch(
-          `https://ad-astra-propuestas-worker.faiafacundo.workers.dev/projects?cliente=${user.id}`
+          `${worker_url}/projects?cliente=${user.id}`
         );
         if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
         const data = await response.json();
-        setProjects(data.projects || []);
+        // El backend ahora retorna un array de proyectos
+        setProjects(Array.isArray(data) ? data : []);
       } catch (err) {
         setError("No se pudieron cargar los proyectos. Intenta nuevamente.");
       } finally {
@@ -234,10 +174,16 @@ export default function Projects() {
                       <div className="flex justify-between items-start mb-4">
                         <div className="flex-1">
                           <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                            {project.name}
+                            {project.nombre}
                           </h3>
                           <p className="text-sm text-gray-600 mb-3">
-                            {project.description}
+                            {/* Si hay propuesta, mostrar un preview del link o texto corto */}
+                            {project.propuesta
+                              ? typeof project.propuesta === "string" &&
+                                project.propuesta.length > 60
+                                ? project.propuesta.slice(0, 60) + "..."
+                                : project.propuesta
+                              : "Sin propuesta"}
                           </p>
                         </div>
                         <Chip
@@ -251,29 +197,13 @@ export default function Projects() {
 
                       <div className="space-y-2 mb-4">
                         <div className="flex justify-between text-sm">
-                          <span className="text-gray-500">Cliente:</span>
-                          <span className="font-medium">{project.cliente}</span>
-                        </div>
-                        <div className="flex justify-between text-sm">
-                          <span className="text-gray-500">Depósito:</span>
+                          <span className="text-gray-500">ID Cliente:</span>
                           <span className="font-medium">
-                            $
-                            {project.deposito_inicial?.toLocaleString?.() ??
-                              project.deposito_inicial}
+                            {project.id_cliente}
                           </span>
                         </div>
                         <div className="flex justify-between text-sm">
-                          <span className="text-gray-500">Fecha:</span>
-                          <span className="font-medium">
-                            {project.fecha_creacion
-                              ? new Date(
-                                  project.fecha_creacion
-                                ).toLocaleDateString("es-ES")
-                              : "-"}
-                          </span>
-                        </div>
-                        <div className="flex justify-between text-sm">
-                          <span className="text-gray-500">ID:</span>
+                          <span className="text-gray-500">ID Proyecto:</span>
                           <span className="font-mono text-xs text-gray-400">
                             {project.id}
                           </span>
@@ -292,7 +222,6 @@ export default function Projects() {
             )}
             {!loading && projects.length === 0 && (
               <div className="text-center py-16">
-                <div className="text-gray-400 text-6xl mb-4">📋</div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">
                   No tienes proyectos aún
                 </h3>
