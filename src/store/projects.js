@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { worker_url } from "../lib/constant.js";
 
-export const useProjectsStore = create((set, get) => ({
+export const useProjectsStore = create((set) => ({
   projects: [],
   loading: false,
   error: null,
@@ -10,7 +10,7 @@ export const useProjectsStore = create((set, get) => ({
     if (!userId) return;
     set({ loading: true, error: null });
     try {
-      const response = await fetch(`${worker_url}/projects?cliente=${userId}`);
+      const response = await fetch(`${worker_url}/proyecto?cliente=${userId}`);
       if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
       const data = await response.json();
       set({
@@ -23,8 +23,20 @@ export const useProjectsStore = create((set, get) => ({
       set({ loading: false });
     }
   },
-  getProjectById(id) {
-    return get().projects.find((p) => p.id === id);
+  async getProjectById(id) {
+    if (!id) return null;
+    set({ loading: true, error: null });
+    try {
+      const response = await fetch(`${worker_url}/proyecto/${id}`);
+      if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
+      const data = await response.json();
+      return data;
+    } catch (err) {
+      set({ error: "No se pudo cargar el proyecto." });
+      return null;
+    } finally {
+      set({ loading: false });
+    }
   },
   clearProjects() {
     set({ projects: [], error: null, lastFetchedUserId: null });
@@ -32,16 +44,17 @@ export const useProjectsStore = create((set, get) => ({
   async updateProjectStatus(id, status, additionalData = null) {
     set({ loading: true, error: null });
     try {
+      // Ahora la firma se hace sobre el contrato, no el proyecto
       const requestBody = { status };
       if (additionalData) Object.assign(requestBody, additionalData);
-      const response = await fetch(`${worker_url}/${id}`, {
+      const response = await fetch(`${worker_url}/contrato/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(requestBody),
       });
       if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
       const updated = await response.json();
-      // Update the project in the store
+      // Actualizar el proyecto en el store si corresponde
       set((state) => ({
         projects: state.projects.map((p) =>
           p.id === id ? { ...p, ...updated } : p

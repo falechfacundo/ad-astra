@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import {
   Button,
@@ -45,11 +45,18 @@ export default function Proposal() {
   const [nameError, setNameError] = useState("");
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  // Get proposal/project from global store
-  const proposal = useMemo(
-    () => getProjectById(proposalId),
-    [getProjectById, proposalId]
-  );
+  // Get proposal/project from backend
+  const [proposal, setProposal] = useState(null);
+
+  useEffect(() => {
+    const fetchProposal = async () => {
+      if (proposalId) {
+        const data = await getProjectById(proposalId);
+        setProposal(data);
+      }
+    };
+    fetchProposal();
+  }, [proposalId, getProjectById]);
 
   // Fetch projects if not loaded
   useEffect(() => {
