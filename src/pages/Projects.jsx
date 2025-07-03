@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Card, CardBody, Button, Chip } from "@nextui-org/react";
 import { useUser, SignedIn, SignedOut, SignInButton } from "@clerk/clerk-react";
 import { AnimatedGridPattern } from "../components/magic_ui/AnimatedGridPattern.jsx";
+import { useEffect, useState } from "react";
 
 // Datos mock de proyectos expandidos
 const allUserProjects = [
@@ -88,6 +89,49 @@ const getStatusText = (status) => {
 
 export default function Projects() {
   const { user } = useUser();
+  const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      if (!user) {
+        setProjects([]);
+        setLoading(false);
+        return;
+      }
+      setLoading(true);
+      setError(null);
+      // Detectar modo desarrollo
+      const isDevelopment =
+        import.meta.env.DEV || window.location.hostname === "localhost";
+      if (isDevelopment) {
+        // Fallback a mock en desarrollo
+        setProjects(
+          allUserProjects.filter(
+            (p) => p.id_cliente === user.id || !p.id_cliente
+          )
+        );
+        setLoading(false);
+        return;
+      }
+      try {
+        // Petición real al worker usando el id_cliente
+        const response = await fetch(
+          `https://ad-astra-propuestas-worker.faiafacundo.workers.dev/projects?cliente=${user.id}`
+        );
+        if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
+        const data = await response.json();
+        setProjects(data.projects || []);
+      } catch (err) {
+        setError("No se pudieron cargar los proyectos. Intenta nuevamente.");
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchProjects();
+  }, [user]);
+
   return (
     <div className="relative min-h-screen">
       {/* AnimatedGridPattern como fondo */}
@@ -140,9 +184,7 @@ export default function Projects() {
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
               <Card className="backdrop-blur-md bg-electric-violet-500/40 border border-electric-violet-300/50 shadow-lg">
                 <CardBody className="text-white">
-                  <div className="text-2xl font-bold">
-                    {allUserProjects.length}
-                  </div>
+                  <div className="text-2xl font-bold">{projects.length}</div>
                   <div className="text-electric-violet-100">
                     Total de Proyectos
                   </div>
@@ -151,10 +193,7 @@ export default function Projects() {
               <Card className="backdrop-blur-md bg-turquoise-500/40 border border-turquoise-300/50 shadow-lg">
                 <CardBody className="text-white">
                   <div className="text-2xl font-bold">
-                    {
-                      allUserProjects.filter((p) => p.status === "pending")
-                        .length
-                    }
+                    {projects.filter((p) => p.status === "pending").length}
                   </div>
                   <div className="text-turquoise-100">Pendientes</div>
                 </CardBody>
@@ -162,10 +201,7 @@ export default function Projects() {
               <Card className="backdrop-blur-md bg-electric-violet-500/40 border border-electric-violet-300/50 shadow-lg">
                 <CardBody className="text-white">
                   <div className="text-2xl font-bold">
-                    {
-                      allUserProjects.filter((p) => p.status === "firmado")
-                        .length
-                    }
+                    {projects.filter((p) => p.status === "firmado").length}
                   </div>
                   <div className="text-electric-violet-100">Firmados</div>
                 </CardBody>
@@ -173,10 +209,7 @@ export default function Projects() {
               <Card className="backdrop-blur-md bg-turquoise-500/40 border border-turquoise-300/50 shadow-lg">
                 <CardBody className="text-white">
                   <div className="text-2xl font-bold">
-                    {
-                      allUserProjects.filter((p) => p.status === "in_progress")
-                        .length
-                    }
+                    {projects.filter((p) => p.status === "in_progress").length}
                   </div>
                   <div className="text-turquoise-100">En Progreso</div>
                 </CardBody>
@@ -184,69 +217,80 @@ export default function Projects() {
             </div>
 
             {/* Lista de proyectos */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {allUserProjects.map((project) => (
-                <Card
-                  key={project.id}
-                  className="backdrop-blur-md bg-white/40 border border-white/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-white/50"
-                >
-                  <CardBody className="p-6">
-                    <div className="flex justify-between items-start mb-4">
-                      <div className="flex-1">
-                        <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                          {project.name}
-                        </h3>
-                        <p className="text-sm text-gray-600 mb-3">
-                          {project.description}
-                        </p>
+            {loading ? (
+              <div className="text-center py-16 text-lg text-gray-500">
+                Cargando proyectos...
+              </div>
+            ) : error ? (
+              <div className="text-center py-16 text-red-500">{error}</div>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {projects.map((project) => (
+                  <Card
+                    key={project.id}
+                    className="backdrop-blur-md bg-white/40 border border-white/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-white/50"
+                  >
+                    <CardBody className="p-6">
+                      <div className="flex justify-between items-start mb-4">
+                        <div className="flex-1">
+                          <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                            {project.name}
+                          </h3>
+                          <p className="text-sm text-gray-600 mb-3">
+                            {project.description}
+                          </p>
+                        </div>
+                        <Chip
+                          color={getStatusColor(project.status)}
+                          variant="flat"
+                          size="sm"
+                        >
+                          {getStatusText(project.status)}
+                        </Chip>
                       </div>
-                      <Chip
-                        color={getStatusColor(project.status)}
-                        variant="flat"
-                        size="sm"
-                      >
-                        {getStatusText(project.status)}
-                      </Chip>
-                    </div>
 
-                    <div className="space-y-2 mb-4">
-                      <div className="flex justify-between text-sm">
-                        <span className="text-gray-500">Cliente:</span>
-                        <span className="font-medium">{project.cliente}</span>
+                      <div className="space-y-2 mb-4">
+                        <div className="flex justify-between text-sm">
+                          <span className="text-gray-500">Cliente:</span>
+                          <span className="font-medium">{project.cliente}</span>
+                        </div>
+                        <div className="flex justify-between text-sm">
+                          <span className="text-gray-500">Depósito:</span>
+                          <span className="font-medium">
+                            $
+                            {project.deposito_inicial?.toLocaleString?.() ??
+                              project.deposito_inicial}
+                          </span>
+                        </div>
+                        <div className="flex justify-between text-sm">
+                          <span className="text-gray-500">Fecha:</span>
+                          <span className="font-medium">
+                            {project.fecha_creacion
+                              ? new Date(
+                                  project.fecha_creacion
+                                ).toLocaleDateString("es-ES")
+                              : "-"}
+                          </span>
+                        </div>
+                        <div className="flex justify-between text-sm">
+                          <span className="text-gray-500">ID:</span>
+                          <span className="font-mono text-xs text-gray-400">
+                            {project.id}
+                          </span>
+                        </div>
                       </div>
-                      <div className="flex justify-between text-sm">
-                        <span className="text-gray-500">Depósito:</span>
-                        <span className="font-medium">
-                          ${project.deposito_inicial.toLocaleString()}
-                        </span>
-                      </div>
-                      <div className="flex justify-between text-sm">
-                        <span className="text-gray-500">Fecha:</span>
-                        <span className="font-medium">
-                          {new Date(project.fecha_creacion).toLocaleDateString(
-                            "es-ES"
-                          )}
-                        </span>
-                      </div>
-                      <div className="flex justify-between text-sm">
-                        <span className="text-gray-500">ID:</span>
-                        <span className="font-mono text-xs text-gray-400">
-                          {project.id}
-                        </span>
-                      </div>
-                    </div>
 
-                    <Link to={`/proposal?id=${project.id}`}>
-                      <Button className="w-full bg-electric-violet-600 text-white hover:bg-electric-violet-700 transition-colors">
-                        Ver Detalles
-                      </Button>
-                    </Link>
-                  </CardBody>
-                </Card>
-              ))}
-            </div>
-
-            {allUserProjects.length === 0 && (
+                      <Link to={`/proposal?id=${project.id}`}>
+                        <Button className="w-full bg-electric-violet-600 text-white hover:bg-electric-violet-700 transition-colors">
+                          Ver Detalles
+                        </Button>
+                      </Link>
+                    </CardBody>
+                  </Card>
+                ))}
+              </div>
+            )}
+            {!loading && projects.length === 0 && (
               <div className="text-center py-16">
                 <div className="text-gray-400 text-6xl mb-4">📋</div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">
