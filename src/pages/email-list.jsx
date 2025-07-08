@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import Layout from "../components/layout/Layout.jsx";
 
+const WORKER_URL = "https://ad-astra-newsletter-worker.faiafacundo.workers.dev";
+
 export default function Emails() {
   const [emails, setEmails] = useState([]);
 
   useEffect(() => {
-    fetch("https://ad-astra-newsletter-worker.faiafacundo.workers.dev")
+    fetch(WORKER_URL)
       .then((response) => response.text())
       .then((data) => {
         const emailList = data.split(",");
