@@ -1,8 +1,8 @@
-import { TextDevelopment, TitleDevelopment, Development } from "./Development";
-import Hosting from "./Hosting";
-import Analytics from "./Analytics";
-import Cloud from "./Cloud";
-import Design from "./Design";
+// import { TextDevelopment, TitleDevelopment, Development } from "./Development";
+// import Hosting from "./Hosting";
+// import Analytics from "./Analytics";
+// import Cloud from "./Cloud";
+// import Design from "./Design";
 
 export const Cloude = {
   name: "Cloud",
@@ -11,7 +11,7 @@ export const Cloude = {
   href: "/",
   className:
     "col-span-3 lg:col-span-1 boxshadow-orange md:col-span-2 border-orange-800/40 hover:bg-orange-200",
-  background: <Cloud />,
+  // background: <Cloud />,
 };
 export const Analyticse = {
   name: "Data Analitics, AI and Business Automations",
@@ -21,7 +21,7 @@ export const Analyticse = {
   className2: "scale-150",
   className:
     "col-span-3 lg:col-span-2 boxshadow-orange border-orange-800/20 md:col-span-3 hover:bg-orange-200",
-  background: <Analytics />,
+  // background: <Analytics />,
 };
 
 export const Hostinge = {
@@ -31,7 +31,7 @@ export const Hostinge = {
   href: "/",
   className:
     "col-span-3 lg:col-span-1 row-span-2 boxshadow-turquoise border-turquoise-500/20 md:row-span-1 lg:row-span-2 md:col-span-3 hover:bg-turquoise-200",
-  background: <Hosting />,
+  // background: <Hosting />,
 };
 
 export const Designe = {
@@ -41,14 +41,14 @@ export const Designe = {
   href: "/",
   className:
     "col-span-3 lg:col-span-1 boxshadow-turquoise md:col-span-2 md:row-span-1 lg:order-last border-turquoise-500/40 hover:bg-turquoise-200",
-  background: <Design />,
+  // background: <Design />,
 };
 
 export const Developmente = {
-  name: <TitleDevelopment />,
-  description: <TextDevelopment />,
+  // name: <TitleDevelopment />,
+  // description: <TextDevelopment />,
   href: "/",
   className:
     "col-span-3 row-span-2 min-h-[700px] lg:col-span-3 boxshadow-violet md:order-last md:col-span-5 border-electric-violet-800/20",
-  background: <Development />,
+  // background: <Development />,
 };

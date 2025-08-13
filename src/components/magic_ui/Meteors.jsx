@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-
 import { cn } from "@/lib/utils";
 
 export const Meteors = ({ number = 20 }) => {
